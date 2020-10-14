@@ -59,9 +59,9 @@
 	<div>---------------------</div>
 	<mgt-get resource="/users/?$filter=extdaxtam48_StaffSignInOut/location eq 'Wagga Wagga'&$select=displayName,id,extdaxtam48_StaffSignInOut" scopes="User.Read.All">
         <template>
-            <div class="teams">
+            <div class="teams" data-for="user in value">
                 <mgt-person
-					person-query="{{userPrincipalName}}"
+					person-query="{{user.userPrincipalName}}"
 					view="oneline"
 					person-card="hover"
 				  ></mgt-person>
