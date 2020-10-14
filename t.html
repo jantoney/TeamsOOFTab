@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <title>Welcome to JayA Teams Tab 0259</title>
+    <title>Welcome to JayA Teams Tab 0307</title>
     <mgt-login></mgt-login>
 	<div class="header">
                 <h1>5GN Staff Check IN/OUT<h1>
@@ -39,7 +39,7 @@
         <template>
             <div class="teams" data-for="user in value">
                 <mgt-person user-id="{{user.id}}" view="twoline" person-card="hover" show-presence="true"></mgt-person>
-		    Manual:{{user.displayName}} ({{user.userPrincipalName}})({{user.id}})
+		    {{user.displayName}} - {{user.userPrincipalName}})
             </div>
         </template>
         <template data-type="loading">
