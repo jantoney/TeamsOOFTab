@@ -28,13 +28,13 @@
     </style>
 </head>
 <body>
-    <title>Welcome to JayA Teams Tab 0230</title>
+    <title>Welcome to JayA Teams Tab 0233</title>
     <mgt-login></mgt-login>
     <mgt-get resource="/me/joinedTeams" scopes="User.Read.All">
         <template>
             <div class="header">
                 <h1>My Joined Teams<h1>
-                <h2>And its members - 0230</h2>
+                <h2>And its members - 0233</h2>
             </div>
             <div class="teams" data-for="team in value">
                 <h3>{{ team.displayName }}</h3>
@@ -57,7 +57,7 @@
         </template>
     </mgt-get>
 	<div>---------------------</div>
-	<mgt-get resource="/users/?$filter=extdaxtam48_StaffSignInOut/location eq 'Wagga Wagga'&$select=displayName,id,extdaxtam48_StaffSignInOut" scopes="User.Read.All">
+	<mgt-get resource="/users/?$filter=extdaxtam48_StaffSignInOut/location eq 'Wagga Wagga'" scopes="User.Read.All">
         <template>
             <div class="teams" data-for="user in value">
                 <mgt-person
@@ -65,6 +65,7 @@
 					view="oneline"
 					person-card="hover"
 				  ></mgt-person>
+		    UPN = {{user.userPrincipalName}}
             </div>
         </template>
         <template data-type="loading">
