@@ -12,8 +12,8 @@
             background-color: #6264A7;
             text-align: center;
             color: #F3F2F1;
-            padding: 20px 10px;
-            margin: 8px 4px;
+            padding: 20px 5px;
+            margin: 8px 2px;
             box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
         }
         .teams {
@@ -28,44 +28,18 @@
     </style>
 </head>
 <body>
-    <title>Welcome to JayA Teams Tab 0233</title>
+    <title>Welcome to JayA Teams Tab 0253</title>
     <mgt-login></mgt-login>
-    <mgt-get resource="/me/joinedTeams" scopes="User.Read.All">
-        <template>
-            <div class="header">
-                <h1>My Joined Teams<h1>
-                <h2>And its members - 0233</h2>
+	<div class="header">
+                <h1>5GN Staff Check IN/OUT<h1>
+                <h2>Stay COVIDSAFE</h2>
             </div>
-            <div class="teams" data-for="team in value">
-                <h3>{{ team.displayName }}</h3>
-                <div data-if="team.description" class="description">
-                    {{ team.description }}
-                </div>
-                <div data-else class="description">
-                    Team description is empty
-                </div>
-                <h4>
-                    <mgt-people show-max="10" group-id={{team.id}}></mgt-people>
-                </h4>
-            </div>
-        </template>
-        <template data-type="loading">
-            Loading...
-        </template>
-        <template data-type="error">
-            {{ this }}
-        </template>
-    </mgt-get>
-	<div>---------------------</div>
+	<div>Users in the Wagga Wagga office</div>
 	<mgt-get resource="/users/?$filter=extdaxtam48_StaffSignInOut/location eq 'Wagga Wagga'" scopes="User.Read.All">
         <template>
             <div class="teams" data-for="user in value">
-                <mgt-person
-					person-query="{{user.userPrincipalName}}"
-					view="oneline"
-					person-card="hover"
-				  ></mgt-person>
-		    UPN = {{user.userPrincipalName}}
+                <mgt-person person-query="{{user.userPrincipalName}}" view="twoline" person-card="hover" show-presence="true"></mgt-person>
+		    Manual:{{user.DisplayName}} ({{user.userPrincipalName}})
             </div>
         </template>
         <template data-type="loading">
