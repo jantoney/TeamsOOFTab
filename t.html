@@ -56,7 +56,24 @@
             {{ this }}
         </template>
     </mgt-get>
-    <mgt-agenda></mgt-agenda>
+	<div>WOW</div>
+	<mgt-get resource="/users/?$filter=extdaxtam48_StaffSignInOut/location eq 'Wagga Wagga'&$select=displayName,id,extdaxtam48_StaffSignInOut" scopes="User.Read.All">
+        <template>
+            <div class="teams" data-for="team in value">
+                <mgt-person
+					person-query="{{userPrincipalName}}"
+					view="oneline"
+					person-card="hover"
+				  ></mgt-person>
+            </div>
+        </template>
+        <template data-type="loading">
+            Loading...
+        </template>
+        <template data-type="error">
+            {{ this }}
+        </template>
+    </mgt-get>
     <script>
         let provider;
         if (mgt.TeamsProvider.isAvailable) {
